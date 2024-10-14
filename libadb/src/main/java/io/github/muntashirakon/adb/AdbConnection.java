@@ -334,7 +334,9 @@ public class AdbConnection implements Closeable {
                             break;
                         }
                         case AdbProtocol.A_OPEN:
-                        case AdbProtocol.A_SYNC:
+                            break;
+
+
                         default:
                             Log.e(TAG, String.format("Unrecognized command = 0x%x", msg.command));
                             // Unrecognized packet, just drop it

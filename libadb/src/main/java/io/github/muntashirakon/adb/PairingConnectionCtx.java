@@ -215,6 +215,8 @@ public final class PairingConnectionCtx implements Closeable {
         // Write our SPAKE2 msg
         writeHeader(ourHeader, msg);
 
+        System.out.println("ourHeader"+ourHeader+" msg:"+Arrays.toString(msg));
+
         // Read the peer's SPAKE2 msg header
         PairingPacketHeader theirHeader = readHeader();
         if (theirHeader == null || !checkHeaderType(PairingPacketHeader.SPAKE2_MSG, theirHeader.type)) return false;

@@ -151,7 +151,7 @@ public class MainViewModel extends AndroidViewModel {
                 boolean pairingStatus;
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                     AbsAdbConnectionManager manager = AdbConnectionManager.getInstance(getApplication());
-                    pairingStatus = manager.pair(AndroidUtils.getHostIpAddress(getApplication()), port, pairingCode);
+                    pairingStatus = manager.pair("192.168.78.137", port, pairingCode);
                 } else pairingStatus = false;
                 pairAdb.postValue(pairingStatus);
                 autoConnectInternal();
